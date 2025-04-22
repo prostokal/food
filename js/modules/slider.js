@@ -1,19 +1,19 @@
-function slider() {
+function slider({container, slide, field,totalCounter,currentCounter,wrapper, nextArrow, prevArrow}) {
 
     // Slider
 
     let slideIndex = 1;
     let offset = 0;
 
-    const slider = document.querySelector('.offer__slider'),
-        slides = slider.querySelectorAll(".offer__slide"),
-        prev = slider.querySelector(".offer__slider-prev"),
-        next = slider.querySelector(".offer__slider-next"),
-        total = slider.querySelector("#total"),
-        current = slider.querySelector("#current"),
-        slidesWrapper = slider.querySelector(".offer__slider-wrapper"),
+    const slider = document.querySelector(slide),
+        slides = slider.querySelectorAll(container),
+        prev = slider.querySelector(prevArrow),
+        next = slider.querySelector(nextArrow),
+        total = slider.querySelector(totalCounter),
+        current = slider.querySelector(currentCounter),
+        slidesWrapper = slider.querySelector(wrapper),
         width = window.getComputedStyle(slidesWrapper).width,
-        slidesField = slider.querySelector(".offer__slider-inner");
+        slidesField = slider.querySelector(field);
 
         
         
@@ -98,4 +98,4 @@ function slider() {
         }
     });
 }
-module.exports = slider;
+export default slider;

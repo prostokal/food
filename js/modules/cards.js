@@ -1,28 +1,18 @@
-function menu() {
-
+import { getResourse } from "../services/services";
+function cards() {
     // menu 
 
-    async function getResourse(url) { 
-        const res = await fetch(url)
-        if (!res.ok) {
-            throw new Error(`Some error code: ${res.status}, url: ${url}`)
-        }
-
-        return await res.json();
-    };
-    
-    const menuWrapper = document.querySelector('.menu .container');
-
-    class MenuItems {
-        constructor(src, alt, title, descr, price, ...classes) {
+    class MenuCards {
+        constructor(src, alt, title, descr, price,parentSelector, ...classes) {
             this.src = src;
             this.alt = alt
             this.title = title;
             this.descr = descr;
+            this.parent = document.querySelector(parentSelector);
             this.price = price * 41;
             this.classes = classes
         }
-        addItemToSite(wrapper) {
+        addItemToSite() {
             const item = document.createElement('div')
             if (this.classes.length === 0) {
                 this.classes = "menu__item";
@@ -40,17 +30,16 @@ function menu() {
                         <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
                     </div>
                     `
-            wrapper.append(item)
+            this.parent.append(item)
             }
     }
     
     getResourse('http://localhost:3000/menu')
     .then(data => {
-        console.log(data)
         data.forEach(({img, altimg, title, descr, price}) => {
-            new MenuItems(img, altimg, title, descr, price).addItemToSite(menuWrapper);
+            new MenuCards(img, altimg, title, descr, price, '.menu .container').addItemToSite();
         });
     })
 
 }
-module.exports = menu;
+export default cards;

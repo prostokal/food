@@ -1,7 +1,4 @@
-function timer() {
-
-    const deadline = '2025-06-1'
-    
+function timer(timerSelector, deadline) {
     function calculationTime(endtime) {
         const total = Date.parse(endtime) - Date.parse(new Date());
         let days, hours, minutes, seconds;
@@ -56,7 +53,7 @@ function timer() {
 
     }
     
-    getValueTimer('.timer', deadline);
+    getValueTimer(timerSelector, deadline);
 
 }
-module.exports = timer;
+export default timer;

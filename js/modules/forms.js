@@ -1,8 +1,9 @@
-function forms() {
-     // Forms
+import {openModal, closeModal} from "./modal";
+import {postData} from "../services/services";
 
-     const forms = document.querySelectorAll('form');
-    
+function forms(formSelector, modalTimerId) {
+     // Forms
+     const forms = document.querySelectorAll(formSelector);
      const message = {
          loading: 'img/form/spinner.svg',
          success: 'Спасибо! Скоро мы с вами свяжемся',
@@ -14,16 +15,7 @@ function forms() {
          bindPostData(item);
      });
  
-     const postData = async (url, data) => { 
-         const res = await fetch(url, {
-             method: 'POST',
-                 headers: {
-                     'Content-type': 'application/json'
-                 },
-                 body: data
-         })
-         return await res.json();
-     };
+     
      
      function bindPostData(form) {
          form.addEventListener('submit', (e) => {
@@ -43,7 +35,6 @@ function forms() {
              // axios.post('http://localhost:3000/requests', json)
              postData('http://localhost:3000/requests', json)
              .then(data => {
-                     console.log(data);
                      showThanksModal(message.success);
                      statusMessage.remove()
              })
@@ -57,13 +48,10 @@ function forms() {
      }
      
      function showThanksModal(message) {
-         const modal = document.querySelector('[data-modal]');
          const prevModalDialog = document.querySelector('.modal__dialog');
          
          prevModalDialog.classList.add('hide');
-         modal.classList.add('show')
-         modal.classList.remove('hide')
-         document.body.style.overflow = 'hidden'
+         openModal('.modal', modalTimerId);
  
          const thanksModal = document.createElement('div');
          thanksModal.classList.add('modal__dialog');
@@ -80,11 +68,9 @@ function forms() {
              thanksModal.remove();
              prevModalDialog.classList.add('show');
              prevModalDialog.classList.remove('hide');
-             modal.classList.remove('show')
-             modal.classList.add('hide')
-             document.body.style.overflow = ''
+             closeModal('.modal');
          }, 4000)
      }
  
 }
-module.exports = forms;
+export default forms;
