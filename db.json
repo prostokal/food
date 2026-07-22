@@ -26,15 +26,6 @@
     }
   ],
   "requests": [
-    {
-      "id": "72ba",
-      "name": "charizard",
-      "phone": "380660591400"
-    },
-    {
-      "id": "bc18",
-      "name": "dungeon3",
-      "phone": "3000"
-    }
+    
   ]
 }

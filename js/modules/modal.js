@@ -15,17 +15,15 @@ function closeModal(modalSelector) {
 
     modal.classList.remove('show')
     modal.classList.add('hide')
-    document.body.style.overflow = 'none'
+    document.body.style.overflow = ''
 }
 function modal(triggerSelector, modalSelector, modalTimer) {
     const modal = document.querySelector(modalSelector),
           modalBtn = document.querySelectorAll(triggerSelector);
 
-    
-
     modalBtn.forEach(btn => {
         btn.addEventListener('click', () => openModal(modalSelector, modalTimer)) 
-    });
+    }); 
     
     modal.addEventListener('click', (e) => {
         if (modal.classList.contains('show') && e.target == modal || e.target.getAttribute('data-close') == '') {

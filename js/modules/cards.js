@@ -1,5 +1,5 @@
 import { getResourse } from "../services/services";
-function cards() {
+function cards(url) {
     // menu 
 
     class MenuCards {
@@ -21,22 +21,22 @@ function cards() {
                 this.classes.forEach(element => item.classList.add(element))
             }
             item.innerHTML = `
-                    <img src=${this.src} alt=${this.alt}>
-                    <h3 class="menu__item-subtitle">${this.title}</h3>
-                    <div class="menu__item-descr">${this.descr} </div>
-                    <div class="menu__item-divider"></div>
-                    <div class="menu__item-price">
-                        <div class="menu__item-cost">Цена:</div>
-                        <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
-                    </div>
-                    `
+                <img src=${this.src} alt=${this.alt}>
+                <h3 class="menu__item-subtitle">${this.title}</h3>
+                <div class="menu__item-descr">${this.descr} </div>
+                <div class="menu__item-divider"></div>
+                <div class="menu__item-price">
+                    <div class="menu__item-cost">Цена:</div>
+                    <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                </div>
+                `
             this.parent.append(item)
             }
     }
     
-    getResourse('http://localhost:3000/menu')
-    .then(data => {
-        data.forEach(({img, altimg, title, descr, price}) => {
+    getResourse(url)
+    .then(({menu}) => {
+        menu.forEach(({img, altimg, title, descr, price}) => {
             new MenuCards(img, altimg, title, descr, price, '.menu .container').addItemToSite();
         });
     })
