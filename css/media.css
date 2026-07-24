@@ -1,0 +1,82 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .header {
+        padding: 0 40px;
+    }
+    .tabcontainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+    }
+    .tabcontent {
+        width: 100%;
+    }
+    .tabcontent__descr {
+        width: 410px;
+        height: 260px;
+        top: 240px;
+        right: -110px;
+        font-size: 18px;
+        padding: 20px;
+        text-overflow: ellipsis;
+    }
+    .sidepanel {
+        display: none;
+        opacity: 0;
+    }
+    .offer {
+        .offer__slider {
+            width: 630px;
+        }
+        .offer__advantages {
+            width: 310px;
+        }
+        .bgc_y {
+            width: 100%;
+        }
+    }
+    .menu {
+        .container {
+            flex-wrap: wrap;
+            gap: 35px;
+        }
+        .menu__item {
+            width: 450px;
+        }
+    }
+
+    .order {
+        .order__form {
+            padding: 0 25px;
+        }
+    }
+    .promotion {
+        .promotion__timer {
+            width: 55%;
+            .timer {
+                padding-left: 50px;
+            }
+        }
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+}
+@media (max-width: 525px) {}
