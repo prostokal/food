@@ -66,7 +66,99 @@
     .container {
         max-width: 720px;
     }
-    
+    .title {
+        font-size: 29px;
+    }
+    .header {
+        padding: 0 20px; 
+        .header__left-block {
+            min-width: 500px;
+        }
+    }
+    .btn {
+        width: 180px;
+        height: 55px;
+        font-size: 17px;
+    }
+    .preview {
+        padding: 28px 0 140px 0;
+        .preview__life {
+            margin-left: 15px;
+        }
+    }
+    .tabcontent__descr {
+        width: 453px;
+        height: 240px;
+        top: 215px;
+        right: -270px;
+        font-size: 16px;
+    }
+    .offer {
+        .bgc_y {
+            height: 900px;
+        }
+        .container:nth-last-child(1) {
+            justify-content: end;
+        }
+        .offer__text {
+            width: 450px;
+        }
+        .offer__advantages {
+            display: none;
+        }
+    }
+    .calculating {
+        .title {
+            text-align-last: left;
+        }
+        .calculating__choose_medium {
+            width: 550px;
+        }
+        .calculating__choose_big {
+            width: 650px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;  
+        }
+    }
+    .menu {
+        .container {
+            justify-content: space-between;
+        }
+        .menu__item {
+            width: 330px;
+        }
+    }
+    .order {
+        .order__form {
+            padding: 0 13px;
+            img {
+                transform: scale(1.2);
+            }
+        }
+        .order__input {
+            width: 220px;
+        }
+    }
+
+    .promotion {
+        .bgc_y {
+            width: 70%;
+        }
+        .promotion__timer {
+            width: 70%;
+            .timer {
+                padding-left: 30px;
+            }
+        }
+        
+        .timer__block {
+            width: 90px;
+            span {
+                font-size: 50px;
+            }
+        }
+    }
 }
 @media (max-width: 768px) {
     .container {
