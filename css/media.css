@@ -21,6 +21,7 @@
         right: -110px;
         font-size: 18px;
         padding: 20px;
+        overflow: hidden;        
         text-overflow: ellipsis;
     }
     .sidepanel {
@@ -164,6 +165,108 @@
     .container {
         max-width: 540px;
     }
+    .title {
+        font-size: 24px;
+    }
+    .btn {
+        width: 150px;
+        height: 50px;
+        font-size: 14px;
+    }
+    .header {
+        height: 80px;
+        padding: 0 20px;
+        .header__left-block {
+            min-width: 310px;
+        }
+        .header__logo {
+            display: none;
+
+        }
+    }
+    .preview {
+        .preview__life {
+            display: none;
+        }
+        .tabcontent {
+            position: unset;
+        }
+        .tabcontainer {
+            position: relative;
+        }
+        .tabcontent__descr {
+            padding: 10px;
+            height: 220px;
+            right: 25px;
+        }
+    }
+    .offer {
+        padding: 130px 0 100px 0;
+        .offer__text {
+            width: 355px;
+        }
+        .offer__slider {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+    }
+
+    .calculating {
+        .calculating__choose_medium {
+            margin: 25px auto 0 auto; 
+            width: 420px;
+            gap: 25px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .calculating__choose_big {
+            width: 420px;
+        }
+    }
+
+    .menu {
+        .container {
+            align-items: stretch;
+        }
+        .menu__item {
+            width: 45%;
+        }
+    }
+
+    .order {
+        .order__form {
+            padding: 0 5px;
+            img {
+                transform: scale(.8);
+            }
+        }
+        .order__input {
+            width: 155px;
+            font-size: 14px;
+            padding: 0 7px;
+        }
+    }
+    .promotion {
+        padding: 70px 0 180px 0;
+        .bgc_y {
+            width: 95%;
+        }
+        .promotion__timer {
+            .timer {
+                padding-left: 40px;
+            }
+            .timer__block {
+                width: 63px;
+                span {
+                    margin-bottom: 15px;
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+
+
 }
 @media (max-width: 576px) {
     .container {
@@ -171,4 +274,3 @@
         padding: 0 10px;
     }
 }
-@media (max-width: 525px) {}
