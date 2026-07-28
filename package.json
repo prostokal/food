@@ -1,18 +1,14 @@
 {
   "name": "food",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "author": "JDH",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "json-server": "^1.0.0-beta.3",
-    "webpack-cli": "^6.0.1"
-  },
-  "dependencies": {
-    "http-server": "^14.1.1"
+    "vite": "^8.1.1"
   }
 }
