@@ -9,8 +9,10 @@ import { openModal } from './modules/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
     const modalTimerId = setTimeout(() => openModal('.modal', modalTimerId), 30000);
-  
-    forms('form', modalTimerId, '../db.json');
+    const url = '/db.json';
+
+
+    forms('form', modalTimerId, url);
     modal('[data-modalbtn]', '.modal', modalTimerId);
     tabs('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
     timer('.timer', '2026-9-1');
@@ -25,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevArrow: '.offer__slider-prev',
     });
     calculator();
-    cards('../db.json');
+    cards(url);
     
 });
     
